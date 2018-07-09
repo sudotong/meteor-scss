@@ -2,7 +2,7 @@ Tinytest.add("sass/scss - imports", function (test) {
   var div = document.createElement('div');
   document.body.appendChild(div);
 
-  var prefixes = ['scss'/*,'sass'*/];
+  var prefixes = ['scss'];
 
   try {
     var t = function (className, style) {
@@ -45,26 +45,6 @@ Tinytest.add('sass/scss - import from includePaths', function (test) {
     div.className = 'from-include-paths';
 
     test.equal(getStyleProperty(div, 'border-bottom-style'), 'outset',  div.className);
-
-  } finally {
-
-    document.body.removeChild(div);
-
-  }
-
-});
-
-Tinytest.add('sass/scss - data option of node-sass', function (test) {
-  
-  var div = document.createElement('div');
-
-  document.body.appendChild(div);
-
-  try {
-
-    div.className = 'test-data-option';
-
-    test.equal(getStyleProperty(div, 'color'), 'rgb(18, 51, 33)',  div.className);
 
   } finally {
 
